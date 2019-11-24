@@ -8,6 +8,6 @@ script:
 - npm run build
 after_success:
 - cd build/
-- echo "mm2bc.ustc-zzzz.net" >CNAME
+- echo "sl.45gfg9.net" >CNAME
 - git init; git add -- *; git commit --allow-empty-message -m ""
-- git push -f -q https://ustc-zzzz:$GITHUB_TOKEN@github.com/ustc-zzzz/mcbbs-markdown2bbcode-converter master:gh-pages
+- git push -f -q https://45gfg9:$GITHUB_TOKEN@github.com/45gfg9/MCBBS-SLConverter master:gh-pages

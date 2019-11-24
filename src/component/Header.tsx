@@ -60,11 +60,11 @@ function Header(props: HeaderProps) {
   const title = (
     <div className={Style.title}>
       <div>
-        <span>MM2BC</span>
-        <span className={Style.titleSuffixBig}>&nbsp;-&nbsp;MCBBS Markdown To BBCode Converter</span>
+        <span>MdSL</span>
+        <span className={Style.titleSuffixBig}>&nbsp;-&nbsp;MCBBS SL Tutorial Converter</span>
       </div>
       <div style={{ paddingLeft: '1px' }}>
-        <span className={Style.titleSuffixSmall}>MCBBS Markdown To BBCode Converter</span>
+        <span className={Style.titleSuffixSmall}>MCBBS SL Tutorial Writer</span>
       </div>
     </div>
   )

@@ -87,6 +87,11 @@ function Config(props: ConfigProps) {
           (Github:&nbsp;<AuthorGitHub />,&nbsp;MCBBS:&nbsp;<AuthorMCBBS />).
         </p>
         <p>
+          Fork:&nbsp;45gfg9
+          (Github:&nbsp;<ForkGitHub />,&nbsp;MCBBS:&nbsp;<ForkMCBBS />)
+          SL Tutorial Link:&nbsp;<SLLink />
+        </p>
+        <p>
           Source Code on <SourceCodeGitHub />, under <SourceCodeLicense />.
         </p>
         <p>
@@ -171,18 +176,31 @@ function AuthorGitHub(props: {}) {
 }
 
 function AuthorMCBBS(props: {}) {
-  const href = 'http://www.mcbbs.net/home.php?mod=space&uid=1480882'
+  const href = 'https://www.mcbbs.net/?1480882'
   return <AboutLink href={href}>@ustc_zzzz</AboutLink>
 }
 
+function ForkGitHub(props: {}) {
+  return <AboutLink href='https://github.com/45gfg9'>@45gfg9</AboutLink>
+}
+
+function ForkMCBBS(props: {}) {
+  const href = 'https://www.mcbbs.net/?1523844'
+  return <AboutLink href={href}>@45gfg9</AboutLink>
+}
+
 function SourceCodeGitHub(props: {}) {
-  const href = 'https://github.com/ustc-zzzz/mcbbs-markdown2bbcode-converter'
+  const href = 'https://github.com/45gfg9/MCBBS-SLConverter'
   return <AboutLink href={href}>GitHub</AboutLink>
 }
 
 function SourceCodeLicense(props: {}) {
   const href = 'https://github.com/ustc-zzzz/mcbbs-markdown2bbcode-converter/blob/master/LICENSE'
   return <AboutLink href={href}>GPL-3.0 License</AboutLink>
+}
+
+function SLLink(props: {}) {
+  return <AboutLink href='https://www.mcbbs.net/thread-688163-1-1.html'>This</AboutLink>
 }
 
 function ByReact(props: {}) {
@@ -198,7 +216,7 @@ function HunluanImg(props: { images: { [key: string]: string } }) {
 }
 
 function Hunluan(props: { children: React.ReactElement<{}> }) {
-  const href = 'http://www.mcbbs.net/home.php?mod=space&uid=3038'
+  const href = 'https://www.mcbbs.net/?3038'
   return <AboutLink href={href}>{props.children}</AboutLink>
 }
 
@@ -207,7 +225,7 @@ function Rom718Img(props: { images: { [key: string]: string } }) {
 }
 
 function Rom718(props: { children: React.ReactElement<{}> }) {
-  const href = 'http://www.mcbbs.net/home.php?mod=space&uid=265600'
+  const href = 'https://www.mcbbs.net/?265600'
   return <AboutLink href={href}>{props.children}</AboutLink>
 }
 
