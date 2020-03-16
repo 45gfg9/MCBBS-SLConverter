@@ -208,7 +208,7 @@ function ByReact(props: {}) {
 }
 
 function ByMaterialUI(props: {}) {
-  return <AboutLink href='http://www.material-ui.com/'>Material UI</AboutLink>
+  return <AboutLink href='https://www.material-ui.com/'>Material UI</AboutLink>
 }
 
 function HunluanImg(props: { images: { [key: string]: string } }) {
