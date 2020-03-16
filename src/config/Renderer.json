@@ -24,14 +24,14 @@
     "suffix_default": {
         "markdown": "${(s=>{let e=document.createElement('textarea');e.innerHTML=s;return e.value})(markdown.split('[br]').join(''))}",
         "code": "[markdown]\\`\\`\\`${language}\\n${code}\\n\\`\\`\\`[/markdown]\\n",
-        "blockquote": "[quote]${quote.split('[br]').join('\\n').replace(/\\n+$/,'')}[/quote]\\n",
+        "blockquote": "[quote]${quote.replace('[br]', '').replace(/\\n+$/,'')}[/quote]\\n",
         "html": "${((d,s)=>d.createElement('span').appendChild(d.createTextNode(s)).parentNode.innerHTML)(document,html)}",
-        "heading": "[size=${7-level}]${text}[/size]\\n\\n",
+        "heading": "${level==2?'\\n':''}[size=${7-level}]${text}[/size]\\n\\n",
         "hr": "[hr]\\n",
         "list": "[list${ordered?'=1':''}]\\n${body.replace(/\\n+$/,'')}[/list]\\n",
         "listitem": "[*]${text.replace(/\\n+$/,'')}\\n",
         "paragraph": "${text.split('\\n').join('[br]').split('[br][br]').join('\\n')}\\n",
-        "table": "[align=center][table=98%]${header}${body}[/table][/align]\\n",
+        "table": "[table=50%]\\n${header}${body}[/table]\\n",
         "tablerow": "[tr]${content}[/tr]\\n",
         "tablecell": "[td]${content}[/td]",
         "strong": "[b]${text}[/b]",
@@ -41,6 +41,6 @@
         "del": "[s]${text}[/s]",
         "link": "[url=${href}]${text}[/url]",
         "image": "[img]${href}[/img]",
-        "text": "${text.replace(/^å/,'[spoiler][size=3]').replace(/^ß/,'[hide]').replace(/∂$/,'[/hide][/size][/spoiler]')}"
+        "text": "${text.replace(/®(.+)®(.+)®/, '[ruby=$2]$1[/ruby]').replace(/å([\\S\\s]+?)å/, '[spoiler]$1[/spoiler]').replace(/ß([\\S\\s]+?)ß/, '[code]$1[/code]')}"
     }
 }

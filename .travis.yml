@@ -9,5 +9,5 @@ script:
 after_success:
 - cd build/
 - echo "sl.45gfg9.net" >CNAME
-- git init; git add -- *; git commit --allow-empty-message -m ""
+- git init; git add -- *; git commit -m "Deploy"
 - git push -f -q https://45gfg9:$GITHUB_TOKEN@github.com/45gfg9/MCBBS-SLConverter master:gh-pages
