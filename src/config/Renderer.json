@@ -22,13 +22,13 @@
         "text": "(text) => "
     },
     "suffix_default": {
-        "markdown": "${(s=>{let e=document.createElement('textarea');e.innerHTML=s;return e.value})(markdown.split('[br]').join(''))}",
+        "markdown": "${(s=>{let e=document.createElement('textarea');e.innerHTML=s;return e.value})(markdown.split('[br]').join('')).replace(/å([\\S\\s]*?)å/g, '[spoiler][size=3]$1[/size][/spoiler]\\n').replace(/ß([\\S\\s]*?)ß/g, '[code]$1[/code]\\n')}",
         "code": "[markdown]\\`\\`\\`${language}\\n${code}\\n\\`\\`\\`[/markdown]\\n",
         "blockquote": "[quote]${quote.replace('[br]', '').replace(/\\n+$/,'')}[/quote]\\n",
         "html": "${((d,s)=>d.createElement('span').appendChild(d.createTextNode(s)).parentNode.innerHTML)(document,html)}",
         "heading": "${level==2?'\\n':''}[size=${7-level}]${text}[/size]\\n\\n",
         "hr": "[hr]\\n",
-        "list": "[list${ordered?'=1':''}]\\n${body.replace(/\\n+$/,'')}[/list]\\n",
+        "list": "[list${ordered?'=1':''}]\\n${body.replace(/\\n+$/,'')}\\n[/list]\\n",
         "listitem": "[*]${text.replace(/\\n+$/,'')}\\n",
         "paragraph": "${text.split('\\n').join('[br]').split('[br][br]').join('\\n')}\\n",
         "table": "[table=50%]\\n${header}${body}[/table]\\n",
@@ -40,7 +40,7 @@
         "br": "[br][br]",
         "del": "[s]${text}[/s]",
         "link": "[url=${href}]${text}[/url]",
-        "image": "[img]${href}[/img]",
-        "text": "${text.replace(/®(.+)®(.+)®/, '[ruby=$2]$1[/ruby]').replace(/å([\\S\\s]+?)å/, '[spoiler]$1[/spoiler]').replace(/ß([\\S\\s]+?)ß/, '[code]$1[/code]')}"
+        "image": "[img]${href}[/img]\\n",
+        "text": "${text.replace('[br]','\\n').replace(/®(.+?)®(.+?)®/g, '[ruby=$2]$1[/ruby]').replace(/Ω/, '[page]\\n').replace(/≈/, '\\n\\nPart题：\\n')}"
     }
 }

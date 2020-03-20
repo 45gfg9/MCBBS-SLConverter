@@ -7,7 +7,7 @@ script:
 - npm install
 - npm run build
 after_success:
-- cd build/
+- cd build
 - echo "sl.45gfg9.net" >CNAME
 - git init; git add .; git commit -m "Deploy"
-- git push -fq https://45gfg9:${GITHUB_TOKEN}@github.com/45gfg9/MCBBS-SLConverter master:gh-pages
+- git push -fq https://45gfg9:${GITHUB_TOKEN}@github.com/45gfg9/MCBBS-SLConverter.git master:gh-pages

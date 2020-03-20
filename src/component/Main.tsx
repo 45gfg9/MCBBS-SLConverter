@@ -101,9 +101,9 @@ interface OutputAreaProps {
 function OutputArea(props: OutputAreaProps) {
   const hint = 'BBCode Output'
   return props.value ? (
-    <p style={{ whiteSpace: 'pre', lineHeight: '24px' }}>{props.value}</p>
+    <p style={{ whiteSpace: 'pre', lineHeight: '20px' }}>{props.value}</p>
   ) : (
-    <p style={{ color: 'rgba(0, 0, 0, 0.3)', lineHeight: '24px', userSelect: 'none' }}>{hint}</p>
+    <p style={{ color: 'rgba(0, 0, 0, 0.3)', lineHeight: '20px', userSelect: 'none' }}>{hint}</p>
   )
 }
 
