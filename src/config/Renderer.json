@@ -22,7 +22,7 @@
         "text": "(text) => "
     },
     "suffix_default": {
-        "markdown": "${(s=>{let e=document.createElement('textarea');e.innerHTML=s;return e.value})(markdown.split('[br]').join('')).replace(/å([\\S\\s]*?)å/g, '[spoiler][size=3]$1[/size][/spoiler]\\n').replace(/ß([\\S\\s]*?)ß/g, '[code]$1[/code]\\n')}",
+        "markdown": "${(s=>{let e=document.createElement('textarea');e.innerHTML=s;return e.value})(markdown.split('[br]').join('')).replace(/®(.+?)®(.+?)®/g, '[ruby=$2]$1[/ruby]').replace(/å([\\S\\s]*?)å/g, '[spoiler][size=3]$1[/size][/spoiler]\\n').replace(/ß([\\S\\s]*?)ß/g, '[code]$1[/code]\\n')}",
         "code": "[markdown]\\`\\`\\`${language}\\n${code}\\n\\`\\`\\`[/markdown]\\n",
         "blockquote": "[quote]${quote.replace('[br]', '').replace(/\\n+$/,'')}[/quote]\\n",
         "html": "${((d,s)=>d.createElement('span').appendChild(d.createTextNode(s)).parentNode.innerHTML)(document,html)}",
@@ -41,6 +41,6 @@
         "del": "[s]${text}[/s]",
         "link": "[url=${href}]${text}[/url]",
         "image": "[img]${href}[/img]\\n",
-        "text": "${text.replace('[br]','\\n').replace(/®(.+?)®(.+?)®/g, '[ruby=$2]$1[/ruby]').replace(/Ω/, '[page]\\n').replace(/≈/, '\\n\\nPart题：\\n')}"
+        "text": "${text.replace('[br]','\\n').replace(/Ω/, '[page]\\n').replace(/≈/, '\\n\\nPart题：\\n')}"
     }
 }
